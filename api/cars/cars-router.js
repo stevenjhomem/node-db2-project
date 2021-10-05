@@ -18,12 +18,23 @@ carsRouter.get("/", async (req, res, next) => {
   }
 });
 
-carsRouter.get("/:id",checkCarId, async (req, res, next) => {
-    res.json(req.car);
-})
-
-carsRouter.post("/", async (req, res, next) => {
-  res.json("posting new car");
+carsRouter.get("/:id", checkCarId, async (req, res) => {
+  res.json(req.car);
 });
+
+carsRouter.post(
+  "/",
+  checkCarPayload,
+  checkVinNumberUnique,
+  checkVinNumberValid,
+  async (req, res, next) => {
+    try{
+        const newCar = await Car.create(req.body)
+        res.status(201).json(newCar);
+    }catch (err) {
+        next(err)
+    }
+  }
+);
 
 module.exports = carsRouter;
