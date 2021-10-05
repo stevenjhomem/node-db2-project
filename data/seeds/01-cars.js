@@ -4,7 +4,7 @@ const cars = [
     vin: "1111111111111",
     make: "toyota",
     model: "prius",
-    milegae: 172000,
+    mileage: 172000,
     title: "clean",
     transmission: "manual",
   },
@@ -12,7 +12,7 @@ const cars = [
     vin: "1111111111112",
     make: "toyota",
     model: "camary",
-    milegae: 192000,
+    mileage: 192000,
     title: "salvage",
     transmission: "automatic",
   },
@@ -20,7 +20,7 @@ const cars = [
     vin: "1111111111113",
     make: "honda",
     model: "civic",
-    milegae: 12000,
+    mileage: 12000,
   },
 ];
 
